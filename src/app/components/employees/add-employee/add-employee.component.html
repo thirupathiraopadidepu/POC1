@@ -1,0 +1,92 @@
+<div class="container my-5">
+    <h2 class="mb-3" style="font-style: oblique; color: darkgreen;">Add New Employee</h2>
+
+    <div class="row">
+        <div class="col-6">
+            <form #form="ngForm" (ngSubmit)="addEmployee()"  class="text-start">
+                
+                <div class="mb-3 text-left">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name"
+                           name="name" [(ngModel)]="addEmployeeRequest.name"
+                           required
+                           #name="ngModel">
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">
+                        <div *ngIf="name.errors?.['required']">
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email"
+                           name="email" [(ngModel)]="addEmployeeRequest.email"
+                           required
+                           #email="ngModel">
+                    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+                        <div *ngIf="email.errors?.['required']">
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="gender" class="form-label">Gender</label>
+                    <input type="text" class="form-control" id="gender"
+                           name="gender" [(ngModel)]="addEmployeeRequest.gender"
+                           required
+                           #gender="ngModel">
+                    <div *ngIf="gender.invalid && (gender.dirty || gender.touched)" class="text-danger">
+                        <div *ngIf="gender.errors?.['required']">
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="number" class="form-control" id="phone"
+                           name="phone" [(ngModel)]="addEmployeeRequest.phone"
+                           required
+                           #phone="ngModel">
+                    <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="text-danger">
+                        <div *ngIf="phone.errors?.['required']">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="salary" class="form-label">Salary</label>
+                    <input type="number" class="form-control" id="salary"
+                           name="salary" [(ngModel)]="addEmployeeRequest.salary"
+                           required
+                           #salary="ngModel">
+                    <div *ngIf="salary.invalid && (salary.dirty || salary.touched)" class="text-danger">
+                        <div *ngIf="salary.errors?.['required']">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="department" class="form-label">Department</label>
+                    <input type="text" class="form-control" id="department"
+                           name="department" [(ngModel)]="addEmployeeRequest.department"
+                           required
+                           #department="ngModel">
+                    <div *ngIf="department.invalid && (department.dirty || department.touched)" class="text-danger">
+                        <div *ngIf="department.errors?.['required']">
+                           
+                        </div>
+                    </div>
+                </div>
+                <div  class="success-message">{{ employeeAddedMessage }}</div>
+
+                <button type="button" class="btn btn-secondary mr-2" style="width: 545px; font-size:x-large;" (click)="clearForm()">Clear</button>
+                <button type="submit" class="btn btn-primary" style="width: 545px; font-size:x-large; margin-top: 10px;">Add</button>
+            </form>
+            
+        </div>
+        
+    </div>
+</div>
+
+
